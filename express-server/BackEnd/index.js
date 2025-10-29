@@ -15,7 +15,9 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post("/user", signUp);
-app.get("/user", UserRouter);
+app.use("/user", UserRouter);
+
+app.get("/user", signUp);
 
 app.use(bodyParser.json());
 
